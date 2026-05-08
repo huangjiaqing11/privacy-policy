@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鱼类加工设备工作流程图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #2196F3;
+            border-radius: 4px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐟 鱼类加工设备工作流程图</h1>
+        
+        <div class="mermaid">
+graph TB
+    Start([设备启动]) --> Motor[单驱动电机启动]
+    Motor --> Chain[传动链同步带动核心机构]
+    Chain --> Water[高压水路同步启动]
+    Water --> Standby[整机进入待机状态]
+    
+    Standby --> Feed[人工投入整鱼至进料漏斗]
+    Feed --> Guide[V形导向挡板强制整理]
+    Guide --> Orient{鱼体定向}
+    
+    Orient -->|头部朝前| HeadFirst[头部骨骼硬挺平直]
+    Orient -->|尾部朝前| TailFirst[尾部肉质柔软弯曲下垂]
+    
+    HeadFirst --> Pass[平稳通过筛选间隙]
+    TailFirst --> Drop[掉落至回流收集槽]
+    Drop --> Recycle[人工回收重投]
+    Recycle --> Feed
+    
+    Pass --> Clamp[柔性夹持输送链条夹持]
+    Clamp --> Descale[柔性去鳞模块]
+    Descale --> Side[侧面柔性刮鳞刀辊]
+    Side --> Brush[背腹仿形毛刷辊]
+    Brush --> DescaleComplete[全表面无死角去鳞完成]
+    
+    DescaleComplete --> Cut[精准开膛模块]
+    Cut --> Disk[圆盘剖腹刀]
+    Disk --> Adaptive[高度自适应调节]
+    Adaptive --> CutComplete[沿腹中线精准剖腹完成]
+    
+    CutComplete --> Gut[洁净去内脏模块]
+    Gut --> Spread[撑鱼板同步撑开腹腔]
+    Spread --> Scrape[螺旋刮刀伸入腹腔]
+    Scrape --> Remove[内脏完整剥离与清理]
+    Remove --> Collect[内脏落入收集盒]
+    
+    Collect --> Wash[高压冲洗模块]
+    Wash --> Spray[多组高压喷淋头同步冲洗]
+    Spray --> Clean[清除残留鱼鳞与内脏组织]
+    Clean --> Output[输送链条送至出料口]
+    Output --> End([净鱼滑出 - 加工完成])
+    
+    style Start fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+    style End fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+    style Motor fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style Chain fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style Water fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style Standby fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    style Orient fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    style Drop fill:#F44336,stroke:#C62828,stroke-width:2px,color:#fff
+    style Recycle fill:#F44336,stroke:#C62828,stroke-width:2px,color:#fff
+    style Descale fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style Cut fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style Gut fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style Wash fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+        </div>
+        
+        <div class="instructions">
+            <h3>📸 如何保存为JPG格式：</h3>
+            <ol>
+                <li>在浏览器中打开此HTML文件</li>
+                <li>等待流程图完全加载显示</li>
+                <li><strong>Windows系统</strong>：按 <code>Win + Shift + S</code> 使用截图工具</li>
+                <li><strong>或者</strong>：右键点击页面 → 打印 → 另存为PDF → 再转换为JPG</li>
+                <li><strong>或者</strong>：使用浏览器扩展如"Full Page Screen Capture"截取整个页面</li>
+            </ol>
+            <p><strong>提示</strong>：建议使用全屏模式(F11)以获得最佳截图效果。</p>
+        </div>
+    </div>
+    
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
